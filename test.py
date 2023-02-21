@@ -8,6 +8,10 @@ def crawling(url, path):
     outfile = open('result2.json', 'w')
     print(url)  
     r = requests.get(url)
+    try:
+        r = requests.get(url)
+    except requests.exceptions.RequestException as e:  # This is the correct syntax
+        raise SystemExit(e)
     soup = BeautifulSoup(r.content,
                          "html.parser")
     #dom = etree.HTML(str(soup))
