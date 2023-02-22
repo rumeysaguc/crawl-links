@@ -45,6 +45,6 @@ with open('urls.txt') as f:
     for line in lines:
         url_list.append(line.split(";")[0])
         paths.append(line.split(";")[1])
-for url, path in zip(url_list, paths):
-    crawl(url, path)
+#for url, path in zip(url_list, paths):
+#    crawl(url, path)
 crawl(url_list[3], paths[3])
